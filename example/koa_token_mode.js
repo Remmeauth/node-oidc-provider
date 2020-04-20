@@ -14,10 +14,17 @@ const { Provider } = require('../lib'); // require('oidc-provider');
 
 const Account = require('./support/account');
 const configuration = require('./support/configuration');
-const routes = require('./routes/koa');
+const routes = require('./routes/koa_token_mode');
 
 const { PORT = 3000, ISSUER = `http://localhost:${PORT}` } = process.env;
 configuration.findAccount = Account.findAccount;
+configuration.renderError = async function renderError(ctx, out, err) {
+  const { message: error, error_description } = err;
+  ctx.body = {
+    error,
+    error_description,
+  }
+};
 
 const app = new Koa();
 app.use(helmet());
