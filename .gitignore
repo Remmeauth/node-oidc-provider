@@ -45,3 +45,6 @@ db.sqlite
 
 # TS test
 types/*.js
+
+#Env
+*.env

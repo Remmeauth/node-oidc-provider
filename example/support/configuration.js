@@ -14,12 +14,13 @@ interactions.add(selectAccount, 0);
 
 module.exports = {
   clients: [
-    // {
-    //   client_id: 'oidcCLIENT',
-    //   client_secret: '...',
-    //   grant_types: ['refresh_token', 'authorization_code'],
-    //   redirect_uris: ['http://sso-client.dev/providers/7/open_id', 'http://sso-client.dev/providers/8/open_id'],
-    // }
+    {
+      client_id: 'foo',
+      client_secret: 'bar',
+      grant_types: ['implicit'],
+      response_types: ['id_token'],
+      redirect_uris: ['https://lvh.me:8080/cb'],
+    }
   ],
   interactions: {
     policy: interactions,
