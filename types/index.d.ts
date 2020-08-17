@@ -205,6 +205,7 @@ declare class Session extends BaseModel {
   jti: string;
 
   account?: string;
+  chain_name?: string;
   acr?: string;
   amr?: string[];
   loginTs?: number;
